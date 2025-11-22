@@ -1,71 +1,104 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    
-    <!-- PWA Settings -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="MacLedger">
-    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/10384/10384161.png"> 
-    
-    <title>Mac记账本</title>
-    <!-- Tailwind CSS via CDN for simplicity and reliability -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f5f5f7;
-            color: #1d1d1f;
-            overflow: hidden;
-            padding-top: env(safe-area-inset-top);
-        }
-        /* iOS Safe Area Fixes */
-        .pb-safe {
-            padding-bottom: env(safe-area-inset-bottom);
-        }
-
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 3px; }
-
-        .glass {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-        }
-        .glass-sidebar {
-            background: rgba(245, 245, 247, 0.8);
-            backdrop-filter: blur(20px);
-            border-right: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-slide-in { animation: slideIn 0.3s ease-out forwards; }
-    </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "vite": "https://aistudiocdn.com/vite@^7.2.4",
-    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.7">
+  <style type="text/css">
+    body {background-color: #f2f2f5}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #6d6d6d; -webkit-text-stroke: #6d6d6d}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #0000ff; -webkit-text-stroke: #0000ff}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #6b0001; -webkit-text-stroke: #6b0001}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #fb0007; -webkit-text-stroke: #fb0007}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; -webkit-text-stroke: #000000; min-height: 14.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #0f7001; -webkit-text-stroke: #0f7001}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; -webkit-text-stroke: #000000}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #900112; -webkit-text-stroke: #900112}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #093c94; -webkit-text-stroke: #093c94}
+    span.s1 {font-kerning: none; background-color: #fffffe}
+    span.s2 {font-kerning: none; color: #fb0007; background-color: #fffffe; -webkit-text-stroke: 0px #fb0007}
+    span.s3 {font-kerning: none; color: #2a2a2a; background-color: #fffffe; -webkit-text-stroke: 0px #2a2a2a}
+    span.s4 {font-kerning: none; color: #6b0001; background-color: #fffffe; -webkit-text-stroke: 0px #6b0001}
+    span.s5 {font-kerning: none; color: #000000; background-color: #fffffe; -webkit-text-stroke: 0px #000000}
+    span.s6 {font-kerning: none; color: #0000ff; background-color: #fffffe; -webkit-text-stroke: 0px #0000ff}
+    span.s7 {font-kerning: none; color: #093c94; background-color: #fffffe; -webkit-text-stroke: 0px #093c94}
+    span.s8 {font-kerning: none; color: #900112; background-color: #fffffe; -webkit-text-stroke: 0px #900112}
+    span.s9 {font-kerning: none}
+    span.s10 {font-kerning: none; color: #137646; background-color: #fffffe; -webkit-text-stroke: 0px #137646}
+  </style>
 </head>
 <body>
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+<p class="p1"><span class="s1">&lt;!DOCTYPE</span><span class="s2"> html</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s3">&lt;</span><span class="s4">html</span><span class="s5"> </span><span class="s2">lang</span><span class="s3">=</span><span class="s1">"zh-CN"</span><span class="s3">&gt;</span></p>
+<p class="p3"><span class="s3">&lt;</span><span class="s1">head</span><span class="s3">&gt;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">meta</span><span class="s5"> </span><span class="s1">charset</span><span class="s3">=</span><span class="s6">"UTF-8"</span><span class="s3">&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">meta</span><span class="s5"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"viewport"</span><span class="s5"> </span><span class="s2">content</span><span class="s3">=</span><span class="s1">"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"</span><span class="s3">&gt;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- PWA Settings --&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">meta</span><span class="s5"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"apple-mobile-web-app-capable"</span><span class="s5"> </span><span class="s2">content</span><span class="s3">=</span><span class="s1">"yes"</span><span class="s3">&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">meta</span><span class="s5"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"apple-mobile-web-app-status-bar-style"</span><span class="s5"> </span><span class="s2">content</span><span class="s3">=</span><span class="s1">"black-translucent"</span><span class="s3">&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">meta</span><span class="s5"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"apple-mobile-web-app-title"</span><span class="s5"> </span><span class="s2">content</span><span class="s3">=</span><span class="s1">"MacLedger"</span><span class="s3">&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">link</span><span class="s5"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"apple-touch-icon"</span><span class="s5"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://cdn-icons-png.flaticon.com/512/10384/10384161.png"</span><span class="s3">&gt;</span><span class="s5"><span class="Apple-converted-space"> </span></span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">title</span><span class="s3">&gt;</span><span class="s1">Mac记账本</span><span class="s3">&lt;/</span><span class="s4">title</span><span class="s3">&gt;</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">&lt;!-- Tailwind CSS via CDN for simplicity --&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://cdn.tailwindcss.com"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">style</span><span class="s3">&gt;</span></p>
+<p class="p8"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s6">@import</span><span class="s5"> </span><span class="s7">url</span><span class="s5">(</span><span class="s1">'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap'</span><span class="s5">);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">body</span><span class="s1"> {</span></p>
+<p class="p9"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s2">font-family:</span><span class="s5"> </span><span class="s1">-apple-system</span><span class="s5">, </span><span class="s1">BlinkMacSystemFont</span><span class="s5">, </span><span class="s8">"Segoe UI"</span><span class="s5">, </span><span class="s1">Roboto</span><span class="s5">, </span><span class="s1">Helvetica</span><span class="s5">, </span><span class="s1">Arial</span><span class="s5">, </span><span class="s1">sans-serif</span><span class="s5">;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s1">background-color:</span><span class="s5"> </span><span class="s7">#f5f5f7</span><span class="s5">;</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">color:</span><span class="s1"> </span><span class="s7">#1d1d1f</span><span class="s1">;</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">overflow:</span><span class="s1"> </span><span class="s7">hidden</span><span class="s1">;</span></p>
+<p class="p9"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s2">padding-top:</span><span class="s5"> </span><span class="s1">env(safe-area-inset-top)</span><span class="s5">;</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p6"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">/* iOS Safe Area Fixes */</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">.pb-safe</span><span class="s1"> {</span></p>
+<p class="p9"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s2">padding-bottom:</span><span class="s5"> </span><span class="s1">env(safe-area-inset-bottom)</span><span class="s5">;</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s9"></span><br></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">::-webkit-scrollbar</span><span class="s5"> { </span><span class="s2">width:</span><span class="s5"> </span><span class="s10">6px</span><span class="s5">; }</span></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">::-webkit-scrollbar-track</span><span class="s5"> { </span><span class="s2">background:</span><span class="s5"> </span><span class="s7">transparent</span><span class="s5">; }</span></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">::-webkit-scrollbar-thumb</span><span class="s5"> { </span><span class="s2">background:</span><span class="s5"> </span><span class="s7">#c1c1c1</span><span class="s5">; </span><span class="s2">border-radius:</span><span class="s5"> </span><span class="s10">3px</span><span class="s5">; }</span></p>
+<p class="p5"><span class="s9"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s4">.glass</span><span class="s1"> {</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">background:</span><span class="s1"> </span><span class="s7">rgba(</span><span class="s10">255</span><span class="s1">, </span><span class="s10">255</span><span class="s1">, </span><span class="s10">255</span><span class="s1">, </span><span class="s10">0.85</span><span class="s7">)</span><span class="s1">;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s1">backdrop-filter:</span><span class="s5"> </span><span class="s7">blur(</span><span class="s10">20px</span><span class="s7">)</span><span class="s5">;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s1">-webkit-backdrop-filter:</span><span class="s5"> </span><span class="s7">blur(</span><span class="s10">20px</span><span class="s7">)</span><span class="s5">;</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border:</span><span class="s1"> </span><span class="s10">1px</span><span class="s1"> </span><span class="s7">solid</span><span class="s1"> </span><span class="s7">rgba(</span><span class="s10">255</span><span class="s1">, </span><span class="s10">255</span><span class="s1">, </span><span class="s10">255</span><span class="s1">, </span><span class="s10">0.4</span><span class="s7">)</span><span class="s1">;</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s1">.glass-sidebar</span><span class="s5"> {</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">background:</span><span class="s1"> </span><span class="s7">rgba(</span><span class="s10">245</span><span class="s1">, </span><span class="s10">245</span><span class="s1">, </span><span class="s10">247</span><span class="s1">, </span><span class="s10">0.8</span><span class="s7">)</span><span class="s1">;</span></p>
+<p class="p4"><span class="s5"><span class="Apple-converted-space">            </span></span><span class="s1">backdrop-filter:</span><span class="s5"> </span><span class="s7">blur(</span><span class="s10">20px</span><span class="s7">)</span><span class="s5">;</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">border-right:</span><span class="s1"> </span><span class="s10">1px</span><span class="s1"> </span><span class="s7">solid</span><span class="s1"> </span><span class="s7">rgba(</span><span class="s10">0</span><span class="s1">, </span><span class="s10">0</span><span class="s1">, </span><span class="s10">0</span><span class="s1">, </span><span class="s10">0.05</span><span class="s7">)</span><span class="s1">;</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">@keyframes</span><span class="s1"> </span><span class="s7">slideIn</span><span class="s1"> {</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">from</span><span class="s1"> { </span><span class="s2">opacity:</span><span class="s1"> </span><span class="s10">0</span><span class="s1">; </span><span class="s2">transform:</span><span class="s1"> </span><span class="s7">translateY(</span><span class="s10">10px</span><span class="s7">)</span><span class="s1">; }</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">to</span><span class="s1"> { </span><span class="s2">opacity:</span><span class="s1"> </span><span class="s10">1</span><span class="s1">; </span><span class="s2">transform:</span><span class="s1"> </span><span class="s7">translateY(</span><span class="s10">0</span><span class="s7">)</span><span class="s1">; }</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p9"><span class="s5"><span class="Apple-converted-space">        </span></span><span class="s4">.animate-slide-in</span><span class="s5"> { </span><span class="s2">animation:</span><span class="s5"> </span><span class="s1">slideIn</span><span class="s5"> </span><span class="s10">0.3s</span><span class="s5"> </span><span class="s1">ease-out</span><span class="s5"> </span><span class="s1">forwards</span><span class="s5">; }</span></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">style</span><span class="s3">&gt;</span></p>
+<p class="p2"><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"importmap"</span><span class="s3">&gt;</span></p>
+<p class="p7"><span class="s1">{</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">  </span>"imports": {</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span>"react": "https://aistudiocdn.com/react@^19.2.0",</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span>"react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span>"@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span>"lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span>"react/": "https://aistudiocdn.com/react@^19.2.0/",</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span>"vite": "https://aistudiocdn.com/vite@^7.2.4",</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">    </span>"@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p7"><span class="s1">}</span></p>
+<p class="p3"><span class="s3">&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
+<p class="p3"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
+<p class="p3"><span class="s3">&lt;</span><span class="s1">body</span><span class="s3">&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">div</span><span class="s5"> </span><span class="s2">id</span><span class="s3">=</span><span class="s1">"root"</span><span class="s3">&gt;&lt;/</span><span class="s4">div</span><span class="s3">&gt;</span></p>
+<p class="p2"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s4">script</span><span class="s5"> </span><span class="s2">type</span><span class="s3">=</span><span class="s1">"module"</span><span class="s5"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"/index.tsx"</span><span class="s3">&gt;&lt;/</span><span class="s4">script</span><span class="s3">&gt;</span></p>
+<p class="p3"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
+<p class="p3"><span class="s3">&lt;/</span><span class="s1">html</span><span class="s3">&gt;</span></p>
 </body>
 </html>
